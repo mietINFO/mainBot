@@ -435,10 +435,11 @@ class Message:
             link = row[7] if row[7] is not None else 'не указано'
             photo = row[8]
 
-
-            if photo is not None or requests.head(photo) == 200:
-                self.bot.send_photo(chat_id=message.chat.id,
-                                photo=photo)
+            if photo is not None:
+                try:
+                    self.bot.send_photo(chat_id=message.chat.id, photo=photo)
+                except:
+                    photo = None
 
             self.bot.send_message(chat_id=message.chat.id,
                               text=func.message_wrapper({
