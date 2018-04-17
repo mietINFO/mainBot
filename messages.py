@@ -202,8 +202,9 @@ class Message:
                                   text=func.message_wrapper({
                                       'headline': 'Поиск кафедры',
                                       'text': '<b>Кафедра:</b> ' + data[1] + '\r\n'
+                                      '<b>Заведующий кафедрой:</b> ' + data[3] + '\r\n'
                                       '<b>Аудитория:</b> ' + data[5] + '\r\n'
-                                      '<b>Телефон:</b> ' + data[3] + '\r\n'
+                                      '<b>Телефон:</b> ' + data[4] + '\r\n'
                                       '<b>E-mail:</b> ' + data[6] + '\r\n'
                                       '<b>Подробнее:</b> ' + data[7] + '\r\n'
                                   }),
@@ -235,7 +236,7 @@ class Message:
         if markup is not None:
             self.bot.send_message(chat_id=message.chat.id,
                                   text=func.message_wrapper({
-                                      'headline': 'Поиск подразделений',
+                                      'headline': 'Поиск подразделения',
                                       'text': 'В данный момент добавлены следующие подразделения МИЭТа:\r\n\r\n' + subdivisions + '\r\n'
                                                                                                                                   'Введите аббревиатуру подразделения, которая указана выше (Например, ДОСУП):'
                                   }),
@@ -244,7 +245,7 @@ class Message:
         else:
             self.bot.send_message(chat_id=message.chat.id,
                                   text=func.message_wrapper({
-                                      'headline': 'Поиск подразделений',
+                                      'headline': 'Поиск подразделения',
                                       'text': 'В данный момент добавлены следующие подразделения МИЭТа:\r\n\r\n' + subdivisions + '\r\n'
                                                                                                                                   'Введите аббревиатуру подразделения, которая указана выше (Например, ДОСУП):'
                                   }),
